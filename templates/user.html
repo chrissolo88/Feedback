@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Feedback: Secret Page{% endblock %}
+{% block brand %}FeedBack{% endblock %}
+{% block content %}
+<h1 class="display-3 mb-4">{{user.username}}</h1>
+<ul>
+<li>First Name:{{user.first_name}}</li>
+<li>Last Name:{{user.last_name}}</li>
+<li>Email: {{user.email}}</li>
+<li><form method="post"><button class="btn btn-sm btn-danger" type="submit">Delete</button></form></li>
+</ul>
+<h3>Feedback</h3>
+<a href="/users/{{user.username}}/feedback" class="btn btn-success">Create Feedback</a>
+<ol class="mt-4">
+    {% for feedback in user_feedback %}
+    <div class="card px-5 py-2">
+    <li><b>{{feedback.title}}</b></li>
+    <p class="lead">-{{feedback.content}}</p>
+    <form>
+        <button class="btn btn-sm btn-warning" formaction="/feedback/{{feedback.id}}">Edit</button>
+        <button class="btn btn-sm btn-danger" formmethod="post" formaction="/feedback/{{feedback.id}}/delete">Delete</button>
+    </form>
+    </div>
+    {% endfor %}
+</ol>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Feedback: Register User{% endblock %}
+{% block brand %}FeedBack{% endblock %}
+{% block content %}
+<h1 class="display-3 mb-4">Sign Up</h1>
+<p class="lead">Register to Join our App!</p>
+<form method="post">
+    {% include 'form.html' %}
+    <button class="btn btn-success" type="submit">Register</button>
+</form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Feedback: Login{% endblock %}
+{% block brand %}FeedBack{% endblock %}
+{% block content %}
+<h1 class="display-3 mb-4">Login</h1>
+<p class="lead">Enter your information</p>
+<form method="post">
+    {% include 'form.html' %}
+    <button class="btn btn-success" type="submit">Login</button>
+    <p class="lead">No Account? Register <a href="/register">HERE</a></p>
+</form>
+{% endblock %}
